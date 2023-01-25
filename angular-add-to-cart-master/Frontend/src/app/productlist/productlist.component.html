@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td>{{p.strName}}</td>
+            <td>{{p.strdescription}}</td>
+            <td>
+                <a routerLink="/product-details/{{p._id}}">
+                    <button class="btn btn-primary">Show</button>
+                </a>
+                &nbsp;
+                <button class="btn btn-danger" (click)="delete(p._id)">Delete</button>
+                &nbsp;
+                <a routerLink="/editproduct/{{p._id}}">
+                    <button class="btn btn-primary">Edit</button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

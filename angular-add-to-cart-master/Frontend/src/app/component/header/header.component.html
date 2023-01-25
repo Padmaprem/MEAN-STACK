@@ -1,0 +1,81 @@
+<header>
+  <div
+    class="navbar navbar-dark bg-primary shadow-sm"
+    style="
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: space-around;
+    "
+  >
+    <div class="navbar-brand align-item-center d-flex">
+      <i
+        class="fas fa-shipping-fast"
+        style="font-size: 40px; cursor: pointer"
+        routerLink="products"
+      >
+      </i
+      >&nbsp;
+      <strong
+        style="font-size: 30px; cursor: pointer; font-weight: bold"
+        routerLink="products"
+        >FASHION WORLD</strong
+      >
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="search products"
+          class="form-control"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+        />
+      </div>
+      <span class="fas fa-search search-icon"></span>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Signin
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item ">Admin</a>
+          
+          <nav class="btn btn-primary navbar navbar-expand-lg navheader">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a routerLink="adduser" class="nav-link">Add User</a>
+                </li>
+          <li class="nav-item">
+                  <a routerLink="list" class="nav-link">UserList</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="addproduct" class="nav-link">Add Product</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="productlist" class="nav-link">productlist</a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+          </li>
+        <li><a class="dropdown-item" routerLink="register">User</a></li>
+      </ul>
+    </div>
+    
+    
+    
+     <div>
+      <button  class="btn btn-secondary" type="button" (click)="logout()">Signout</button>
+       </div>
+      
+    
+
+
+    <button routerLink="cart" class="btn btn-primary">
+      <i class="fas fa-cart-plus" style="font-size: 30px"></i>
+      <div class="badge bg-danger" style="font-size: 10px">{{ totalItem }}</div>
+    </button>
+  </div>
+  
+</header>
